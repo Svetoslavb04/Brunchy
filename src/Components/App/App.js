@@ -1,11 +1,9 @@
 import styles from './App.module.scss';
 
-import Navigation from '../Navigation/Navigation';
-
 function App() {
   return (
-    <div className={styles['App']}>
-      <Navigation></Navigation>
+    <div className="App">
+      <div id={styles['navigation']}></div>
       <div id={styles['headline']}></div>
       <div id={styles['sub-headling']}></div>
       <div id={styles['meals-list']}></div>
