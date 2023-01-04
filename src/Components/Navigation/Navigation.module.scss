@@ -1,0 +1,55 @@
+@use "src/assets/scss/variables.scss" as v;
+
+header {
+    margin-right: 74px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 17px;
+
+    @media screen and (max-width: 831px) {
+        & {
+            margin-right: 73px;
+        }
+    }
+
+    @media screen and (max-width: 431px) {
+        & {
+            margin-right: 16px;
+        }
+    }
+}
+
+#text-logo {
+    margin: 0;
+    color: v.$font-dark;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 65px;
+}
+
+nav {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    #links {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 22px;
+        list-style: none;
+        padding: 0;
+        margin-left: 25px;
+        li {
+            min-width: 59px;
+            max-height: 13px;
+            color: v.$font-light;
+            font-weight: 600;
+            font-size: 14px;
+        }
+    }
+}
