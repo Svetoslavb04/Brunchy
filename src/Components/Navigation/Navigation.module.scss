@@ -1,6 +1,8 @@
 @use "src/assets/scss/variables.scss" as v;
 
 header {
+    margin-top: 36px;
+    margin-left: 140px;
     margin-right: 74px;
     display: flex;
     justify-content: flex-end;
@@ -11,11 +13,14 @@ header {
     @media screen and (max-width: 831px) {
         & {
             margin-right: 73px;
+            margin-top: 34px;
+            margin-left: 56px;
         }
     }
 
-    @media screen and (max-width: 431px) {
+    @media screen and (max-width: 450px) {
         & {
+            margin-left: 44px;
             margin-right: 16px;
         }
     }
