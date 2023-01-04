@@ -1,0 +1,29 @@
+@use "src/assets/scss/variables.scss" as v;
+
+#free-delivery {
+    width: 179px;
+    height: 37px;
+    background-color: v.$primary-light;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+
+    span {
+        color: v.$primary-dark;
+        text-align: center;
+        width: 123px;
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    #circle {
+        width: 55px;
+        height: 55px;
+        border-radius: 100%;
+        background-image: url("../../assets/images/food-supplier.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-color: #ffffff;
+    }
+}
