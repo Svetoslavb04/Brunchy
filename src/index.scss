@@ -1,3 +1,4 @@
+@use "src/assets/scss/variables.scss" as v;
 @import url('./assets/fonts/Poppins/stylesheet.css');
 
 body {
@@ -5,9 +6,22 @@ body {
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: v.$font-dark;
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+.text-primary {
+  color: v.$primary;
+}
+
+.text-primary-light {
+  color: v.$primary-light;
+}
+
+.text-primary-dark {
+  color: v.$primary-dark;
 }
