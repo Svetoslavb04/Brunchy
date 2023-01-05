@@ -1,0 +1,38 @@
+@use "src/assets/scss/variables.scss" as v;
+
+#subheadline-wrapper {
+    margin-top: 37px;
+    margin-left: 140px;
+    position: relative;
+}
+
+#subheadline {
+    max-width: 512px;
+    height: 45px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+@media screen and (max-width: 831px) {
+    #subheadline-wrapper {
+        margin-top: 0px;
+        margin-left: 0px;
+        top: -23px;
+    }
+
+    #subheadline {
+        margin: auto;
+        max-width: 571px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    #subheadline-wrapper {
+        margin: auto;
+        margin-top: 18px;
+        top: 0px;
+        max-width: 416px;
+    }
+}
