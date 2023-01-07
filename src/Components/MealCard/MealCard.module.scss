@@ -1,11 +1,21 @@
 @use "src/assets/scss/variables.scss" as v;
 
 .meal-card {
+    user-select: none;
+
+    min-height: 303px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.meal-content {
     position: relative;
 
-    width: 229px;
+    min-width: 229px;
     height: 270px;
-    
+
     background-color: v.$surface;
     border-radius: 30px;
 
@@ -21,16 +31,18 @@
 }
 
 .meal-image {
-    width: 192.48px;
-    height: 120px;
+    max-height: 120px;
 
-    position: absolute;
+    position: relative;
     left: 51px;
     top: -33px;
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    background-position: center;
-    background-size: contain;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .meal-name,
@@ -67,7 +79,7 @@
     height: 30px;
 
     position: relative;
-    top: -7px;
+    top: -21px;
 
     color: v.$font-dark;
     font-weight: 700;
@@ -98,4 +110,10 @@
         width: 20px;
         height: 20px;
     }
+}
+
+.vertical-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
