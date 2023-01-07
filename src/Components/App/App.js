@@ -14,11 +14,14 @@ function App() {
   
   return (
     <div className={[styles['App']]}>
-      <Navigation></Navigation>
-      <Headline></Headline>
-      <Subheadline></Subheadline>
-      <MealsList handleMealBasketClick={addToBasket}></MealsList>
-      <MealsBasket basket={basket}></MealsBasket>
+      <Navigation />
+      <Headline />
+      <Subheadline />
+      <MealsList handleMealBasketClick={addToBasket} />
+      <MealsBasket
+        basket={basket}
+        openBasketModal={openBasketModal}
+      />
     </div>
   );
 }
