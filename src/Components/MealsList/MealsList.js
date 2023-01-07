@@ -1,7 +1,7 @@
 import styles from './MealsList.module.scss';
 
 import { useRef } from 'react';
-import useHorizontalDrag from '../../hooks/useHorizontalDrag';
+import useHorizontalDrag, { directions } from '../../hooks/useDragScrolling';
 
 import meals from '../../assets/data.json';
 
@@ -11,7 +11,7 @@ const MealsList = ({ handleMealBasketClick }) => {
 
     const mealsListRef = useRef();
 
-    useHorizontalDrag(mealsListRef, 1.4);
+    useHorizontalDrag(mealsListRef, directions.horizontal, 1.4);
 
     return (
         <div
