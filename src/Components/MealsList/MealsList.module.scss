@@ -1,0 +1,26 @@
+@use "src/assets/scss/variables.scss" as v;
+
+.meals-list {
+    margin-top: 36px;
+    margin-left: 140px;
+    margin-right: 20px;
+    display: flex;
+    gap: 57px;
+    
+    overflow: hidden;
+}
+
+@media screen and (max-width: 831px) {
+    .meals-list {
+        margin-left: 56px;
+        margin-top: 118px;
+    }
+}
+
+@media screen and (max-width: 431px) {
+    .meals-list {
+        margin-top: 35px;
+        margin-left: 44px;
+    }
+}
+
