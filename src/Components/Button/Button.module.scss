@@ -1,0 +1,22 @@
+@use "src/assets/scss/variables.scss" as v;
+
+.button {
+    user-select: none;
+    cursor: pointer;
+
+    width: 154px;
+    height: 54px;
+
+    background: v.$primary;
+
+    border: none;
+    border-radius: 15px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+
+    text-align: center;
+    color: #ffffff;
+}
