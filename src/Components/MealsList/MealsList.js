@@ -1,21 +1,17 @@
 import styles from './MealsList.module.scss';
 
 import { useRef } from 'react';
-import useHorizontalDrag from '../../hooks/useHorizontalDrag';
+import useHorizontalDrag, { directions } from '../../hooks/useDragScrolling';
 
 import meals from '../../assets/data.json';
 
 import MealCard from '../MealCard/MealCard';
 
-const MealsList = () => {
+const MealsList = ({ handleMealBasketClick }) => {
 
     const mealsListRef = useRef();
 
-    useHorizontalDrag(mealsListRef, 1.4);
-
-    const handleAddToBasket = () => {
-
-    }
+    useHorizontalDrag(mealsListRef, directions.horizontal, 1.4);
 
     return (
         <div
@@ -31,7 +27,7 @@ const MealsList = () => {
                             caption={meal.caption}
                             price={meal.price}
                             image={meal.image}
-                            handleOnBasketClick={handleAddToBasket}
+                            handleOnBasketClick={handleMealBasketClick.bind(null, meal)}
                         />
                 )
             }
