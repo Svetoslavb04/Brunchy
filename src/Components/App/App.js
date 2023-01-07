@@ -9,9 +9,12 @@ import { useState } from 'react';
 function App() {
 
   const [basket, setBasket] = useState([]);
+  const [isBasketModalVisible, setIsBasketModalVisible] = useState(false);
 
   const addToBasket = (meal) => setBasket(currentMeals => [...currentMeals, meal]);
-  
+
+  const openBasketModal = () => setIsBasketModalVisible(true);
+
   return (
     <div className={[styles['App']]}>
       <Navigation />
