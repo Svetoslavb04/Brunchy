@@ -8,32 +8,50 @@ import Subheadline from '../Subheadline/Subheadline';
 import MealsList from '../MealsList/MealsList';
 import MealsBasket from '../MealsBasket/MealsBasket';
 import BasketListingModal from '../BasketListingModal/BasketListingModal';
+import SuccessModal from '../SuccessModal.js/SuccessModal';
 
 function App() {
 
   const [basket, setBasket] = useState([]);
 
   const [isBasketModalVisible, setIsBasketModalVisible] = useState(false);
+  const [isSuccessModalVisible, setIsSuccessModalVisible] = useState(false);
+
   const handleAppClick = (e) => {
 
     const target = e.target;
 
     if (
-      isBasketModalVisible
-      && !target.closest('.meals-basket')
-      && !target.closest('.basket-list')
+      isSuccessModalVisible
+      && !target.closest('.success-modal')
     ) {
+      setIsSuccessModalVisible(false)
+    }
+
+    if (
+      isBasketModalVisible
+      && (
+        (
+          !target.closest('.meals-basket') && !target.closest('.basket-list'))
+        || target.id === 'order-now-button'
+      )
+    ) {
+
       setIsBasketModalVisible(false)
     }
   }
 
-  const addToBasket = (meal) => setBasket(currentMeals => [...currentMeals, meal]);
-  const addToBasket = (meal) => setBasket(currentMeals => [...currentMeals, { ...meal, id: currentMeals.length }]);
+  const addToBasket = (meal) =>
+    setBasket(currentMeals => [...currentMeals, { ...meal, id: currentMeals.length }]);
 
-  const openBasketModal = () => setIsBasketModalVisible(true);
+  const handleOrder = () => {
+
+    setIsSuccessModalVisible(true)
+    setBasket([])
+    
+  }
 
   return (
-    <div className={[styles['App']]}>
     <div
       className={[styles['App']]}
       onClick={handleAppClick}
@@ -42,10 +60,6 @@ function App() {
       <Headline />
       <Subheadline />
       <MealsList handleMealBasketClick={addToBasket} />
-      <MealsBasket
-        basket={basket}
-        openBasketModal={openBasketModal}
-      />
       <div id={styles['basket-wrapper']}>
         <BasketListingModal
           basket={basket}
@@ -53,7 +67,12 @@ function App() {
         />
         <MealsBasket
           basket={basket}
-          openBasketModal={openBasketModal}
+          openBasketModal={() => setIsBasketModalVisible(true)}
+          handleOrder={handleOrder}
+        />
+        <SuccessModal
+          isVisible={isSuccessModalVisible}
+          closeModal={() => setIsSuccessModalVisible(false)}
         />
       </div>
     </div>

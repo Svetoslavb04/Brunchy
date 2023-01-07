@@ -2,12 +2,11 @@ import styles from './MealsBasket.module.scss';
 
 import Button from '../Button/Button';
 
-const MealsBasket = ({ basket = [], openBasketModal, openSuccessModal }) => {
+const MealsBasket = ({ basket = [], openBasketModal, handleOrder }) => {
 
     const basketValue = basket.reduce((acc, curr) => acc + curr.price, 0);
 
     const handleBasketClick = () => { openBasketModal() }
-    const handleOrderNowClick = () => { openSuccessModal() }
 
     return (
         <div id={styles['meals-basket-wrapper']}>
@@ -20,7 +19,7 @@ const MealsBasket = ({ basket = [], openBasketModal, openSuccessModal }) => {
                 </div>
                 <p id={styles['basket-value']}>{basketValue.toFixed(2)}$</p>
                 <div>
-                    <Button onClick={handleOrderNowClick} text='Order Now' />
+                    <Button id="order-now-button" onClick={handleOrder} text='Order Now' />
                 </div>
             </div>
         </div>
