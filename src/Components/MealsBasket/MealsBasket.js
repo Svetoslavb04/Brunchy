@@ -8,7 +8,7 @@ const MealsBasket = ({ basket = [], openBasketModal }) => {
 
     return (
         <div id={styles['meals-basket-wrapper']}>
-            <div id={styles['meals-basket']}>
+            <div id={styles['meals-basket']} className='meals-basket'>
                 <div
                     id={styles['basket-image-wrapper']}
                     onClick={handleBasketClick}
