@@ -3,6 +3,7 @@ import Navigation from '../Navigation/Navigation';
 import Headline from '../Headline/Headline';
 import Subheadline from '../Subheadline/Subheadline';
 import MealsList from '../MealsList/MealsList';
+import MealsBasket from '../MealsBasket/MealsBasket';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Headline></Headline>
       <Subheadline></Subheadline>
       <MealsList></MealsList>
-      <div id={styles['basket']}></div>
+      <MealsBasket></MealsBasket>
     </div>
   );
 }
