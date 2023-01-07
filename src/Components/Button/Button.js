@@ -1,9 +1,10 @@
 import styles from './Button.module.scss';
 
-const MealsBasket = ({ className, text, onClick }) => {
+const MealsBasket = ({ id, className, text, onClick }) => {
 
     return (
         <button
+            id={id}
             className={`${styles['button']} ${className}`}
             onClick={onClick}
         >{text}</button>
