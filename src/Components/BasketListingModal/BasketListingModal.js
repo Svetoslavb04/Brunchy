@@ -1,6 +1,8 @@
-import { useRef } from 'react';
-import useDragScrolling, { directions } from '../../hooks/useDragScrolling';
 import styles from './BasketListingModal.module.scss';
+
+import { useRef } from 'react';
+
+import useDragScrolling, { directions } from '../../hooks/useDragScrolling';
 
 const BasketListingModal = ({ basket = [], isVisible = false }) => {
 
