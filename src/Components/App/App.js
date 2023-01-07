@@ -10,8 +10,6 @@ function App() {
 
   const [basket, setBasket] = useState([]);
 
-  const basketValue = basket.reduce((acc, curr) => acc + curr.price, 0);
-
   const addToBasket = (meal) => setBasket(currentMeals => [...currentMeals, meal]);
   
   return (
@@ -20,7 +18,7 @@ function App() {
       <Headline></Headline>
       <Subheadline></Subheadline>
       <MealsList handleMealBasketClick={addToBasket}></MealsList>
-      <MealsBasket value={basketValue}></MealsBasket>
+      <MealsBasket basket={basket}></MealsBasket>
     </div>
   );
 }
