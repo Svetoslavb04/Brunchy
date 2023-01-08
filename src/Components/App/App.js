@@ -8,7 +8,8 @@ import Subheadline from '../Subheadline/Subheadline';
 import MealsList from '../MealsList/MealsList';
 import MealsBasket from '../MealsBasket/MealsBasket';
 import BasketListingModal from '../BasketListingModal/BasketListingModal';
-import SuccessModal from '../SuccessModal.js/SuccessModal';
+import SuccessfulOrder from '../SuccessfulOrder/SuccessfulOrder';
+import Modal from '../Modal/Modal';
 
 function App() {
 
@@ -48,7 +49,7 @@ function App() {
 
     setIsSuccessModalVisible(true)
     setBasket([])
-    
+
   }
 
   return (
@@ -70,10 +71,11 @@ function App() {
           openBasketModal={() => setIsBasketModalVisible(true)}
           handleOrder={handleOrder}
         />
-        <SuccessModal
+        <Modal
           isVisible={isSuccessModalVisible}
-          closeModal={() => setIsSuccessModalVisible(false)}
-        />
+        >
+          <SuccessfulOrder onButtonClick={() => setIsSuccessModalVisible(false)} />
+        </Modal>
       </div>
     </div>
   );
