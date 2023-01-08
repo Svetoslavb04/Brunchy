@@ -7,7 +7,7 @@ import meals from '../../assets/data.json';
 
 import MealCard from '../MealCard/MealCard';
 
-const MealsList = ({ handleMealBasketClick }) => {
+const MealsList = ({ handleMealBasketClick, className }) => {
 
     const mealsListRef = useRef();
 
@@ -16,7 +16,7 @@ const MealsList = ({ handleMealBasketClick }) => {
     return (
         <div
             ref={mealsListRef}
-            className={styles['meals-list']}
+            className={`${styles['meals-list']} ${className || ''}`}
         >
             {
                 meals.items.map(

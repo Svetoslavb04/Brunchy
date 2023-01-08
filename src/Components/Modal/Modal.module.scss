@@ -1,0 +1,32 @@
+@use "src/assets/scss/variables.scss" as v;
+
+.blur-element {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+
+    z-index: 3;
+
+    transition: all 0.5s;
+
+    background: rgba(255, 255, 255, 0.84);
+    backdrop-filter: blur(2px);
+}
+
+.modal-content {
+    position: relative;
+    transition: all 0.5s;
+    z-index: 4;
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}

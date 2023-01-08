@@ -1,26 +1,6 @@
 @use "src/assets/scss/variables.scss" as v;
 
-#blur-element {
-    width: 100vw;
-    height: 100vh;
-
-    position: fixed;
-    top: 0;
-
-    z-index: 4;
-
-    transition: all 0.5s;
-
-    background: rgba(255, 255, 255, 0.84);
-    backdrop-filter: blur(2px);
-}
-
-#success-modal {
-    z-index: 4;
-
-    transition: all 0.5s;
-
-    box-sizing: border-box;
+.successful-order {
     text-align: center;
 
     width: 615px;
@@ -31,11 +11,6 @@
 
     border-radius: 15px;
     background-color: v.$surface;
-
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 
     h1,
     h2 {
@@ -64,7 +39,6 @@
     }
 
     @media screen and (max-width: 540px) {
-
         width: 378px;
         height: 242px;
 
@@ -89,14 +63,4 @@
             height: 35px;
         }
     }
-}
-
-.visible {
-    visibility: visible;
-    opacity: 1;
-}
-
-.hidden {
-    opacity: 0;
-    visibility: hidden;
 }

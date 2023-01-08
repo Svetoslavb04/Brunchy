@@ -7,8 +7,9 @@ import Headline from '../Headline/Headline';
 import Subheadline from '../Subheadline/Subheadline';
 import MealsList from '../MealsList/MealsList';
 import MealsBasket from '../MealsBasket/MealsBasket';
-import BasketListingModal from '../BasketListingModal/BasketListingModal';
-import SuccessModal from '../SuccessModal.js/SuccessModal';
+import BasketListing from '../BasketListing/BasketListing';
+import SuccessfulOrder from '../SuccessfulOrder/SuccessfulOrder';
+import Modal from '../Modal/Modal';
 
 function App() {
 
@@ -20,10 +21,10 @@ function App() {
   const handleAppClick = (e) => {
 
     const target = e.target;
-
+    console.log(target);
     if (
       isSuccessModalVisible
-      && !target.closest('.success-modal')
+      && !target.closest('.successful-order')
     ) {
       setIsSuccessModalVisible(false)
     }
@@ -33,7 +34,7 @@ function App() {
       && (
         (
           !target.closest('.meals-basket') && !target.closest('.basket-list'))
-        || target.id === 'order-now-button'
+        || target.classList.contains('order-now-button')
       )
     ) {
 
@@ -48,7 +49,7 @@ function App() {
 
     setIsSuccessModalVisible(true)
     setBasket([])
-    
+
   }
 
   return (
@@ -59,21 +60,31 @@ function App() {
       <Navigation />
       <Headline />
       <Subheadline />
-      <MealsList handleMealBasketClick={addToBasket} />
+      <MealsList handleMealBasketClick={addToBasket} className={styles['meals-list']} />
       <div id={styles['basket-wrapper']}>
-        <BasketListingModal
-          basket={basket}
+        <Modal
           isVisible={isBasketModalVisible}
-        />
+          childrenWrapperClassName={styles['modal-basket-listing-wrapper']}
+        >
+          <BasketListing
+            basket={basket}
+            className={styles['modal-basket-listing']}
+          />
+        </Modal>
         <MealsBasket
           basket={basket}
+          className={styles['meals-basket']}
           openBasketModal={() => setIsBasketModalVisible(true)}
           handleOrder={handleOrder}
         />
-        <SuccessModal
+        <Modal
           isVisible={isSuccessModalVisible}
-          closeModal={() => setIsSuccessModalVisible(false)}
-        />
+        >
+          <SuccessfulOrder
+            className={styles['successful-order']}
+            onButtonClick={() => setIsSuccessModalVisible(false)}
+          />
+        </Modal>
       </div>
     </div>
   );
