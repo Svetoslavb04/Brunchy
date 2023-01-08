@@ -3,7 +3,14 @@
 .meals-list {
     display: flex;
     gap: 57px;
-    
-    overflow: hidden;
+
+    overflow-y: hidden;
+    overflow-x: scroll;
+
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
 }
 
+.meals-list::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+}
