@@ -3,18 +3,11 @@
 .meals-basket-wrapper {
     display: flex;
     justify-content: center;
-
-    position: relative;
-    
-    z-index: 4;
 }
 
 .meals-basket {
     width: 476px;
     height: 81px;
-
-    margin-top: 73px;
-    margin-bottom: 62px;
 
     padding-left: 28px;
     padding-right: 41px;
@@ -55,16 +48,8 @@
         color: v.$font-dark;
     }
 
-    @media screen and (max-width: 831px) {
-        margin-top: 164px;
-        margin-bottom: 77px;
-    }
-
     @media screen and (max-width: 540px) {
         width: 342px;
-
-        margin-top: 53px;
-        margin-bottom: 60px;
 
         padding-left: 16.02px;
         padding-right: 11.31px;

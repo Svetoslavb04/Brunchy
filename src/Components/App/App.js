@@ -21,10 +21,10 @@ function App() {
   const handleAppClick = (e) => {
 
     const target = e.target;
-
+    console.log(target);
     if (
       isSuccessModalVisible
-      && !target.closest('.success-modal')
+      && !target.closest('.successful-order')
     ) {
       setIsSuccessModalVisible(false)
     }
@@ -60,20 +60,30 @@ function App() {
       <Navigation />
       <Headline />
       <Subheadline />
-      <MealsList handleMealBasketClick={addToBasket} />
+      <MealsList handleMealBasketClick={addToBasket} className={styles['meals-list']} />
       <div id={styles['basket-wrapper']}>
-        <Modal isVisible={isBasketModalVisible}>
-          <BasketListing basket={basket} />
+        <Modal
+          isVisible={isBasketModalVisible}
+          childrenWrapperClassName={styles['modal-basket-listing-wrapper']}
+        >
+          <BasketListing
+            basket={basket}
+            className={styles['modal-basket-listing']}
+          />
         </Modal>
         <MealsBasket
           basket={basket}
+          className={styles['meals-basket']}
           openBasketModal={() => setIsBasketModalVisible(true)}
           handleOrder={handleOrder}
         />
         <Modal
           isVisible={isSuccessModalVisible}
         >
-          <SuccessfulOrder onButtonClick={() => setIsSuccessModalVisible(false)} />
+          <SuccessfulOrder
+            className={styles['successful-order']}
+            onButtonClick={() => setIsSuccessModalVisible(false)}
+          />
         </Modal>
       </div>
     </div>

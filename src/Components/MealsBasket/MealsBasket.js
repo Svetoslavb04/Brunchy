@@ -2,14 +2,14 @@ import styles from './MealsBasket.module.scss';
 
 import Button from '../Button/Button';
 
-const MealsBasket = ({ basket = [], openBasketModal, handleOrder }) => {
+const MealsBasket = ({ basket = [], openBasketModal, handleOrder, className }) => {
 
     const basketValue = basket.reduce((acc, curr) => acc + curr.price, 0);
 
     const handleBasketClick = () => { openBasketModal() }
 
     return (
-        <div className={styles['meals-basket-wrapper']}>
+        <div className={`${styles['meals-basket-wrapper']} ${className || ''}`}>
             <div className={`${styles['meals-basket']} meals-basket`}>
                 <div
                     className={styles['basket-image-wrapper']}

@@ -1,122 +1,93 @@
 @use "src/assets/scss/variables.scss" as v;
 
-.basket-list-wrapper {
-    position: fixed;
+.basket-list {
+    width: 479.58px;
 
-    width: 100%;
+    padding-top: 42px;
+    padding-left: 46px;
+    padding-right: 46px;
+    padding-bottom: 48px;
 
-    bottom: 169px;
+    background-color: v.$surface;
+    border-radius: 15px;
 
     display: flex;
     justify-content: center;
+    flex-direction: column;
 
-    .basket-list {
-        width: 479.58px;
-
-        padding-top: 42px;
-        padding-left: 46px;
-        padding-right: 46px;
-        padding-bottom: 48px;
-
-        background-color: v.$surface;
-        border-radius: 15px;
-
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-
-        p {
-            margin: 0;
-            color: v.$font-dark;
-            font-style: normal;
-            font-weight: 700;
-        }
-
-        @media screen and (max-width: 540px) {
-            width: 352.95px;
-
-            padding-left: 33.85px;
-            padding-right: 33.85px;
-        }
-
-        @media screen and (max-width: 390px) {
-            & {
-                width: 80%;
-                height: auto;
-
-                padding-bottom: 30px;
-            }
-        }
-    }
-
-    .divider {
-        height: 0px;
-        border: 1px solid rgba(121, 121, 121, 0.4);
-        margin-top: 23.51px;
-        margin-bottom: 19.49px;
-    }
-
-    .meals {
-        max-height: 350px;
-        overflow: hidden;
-
+    p {
         margin: 0;
-        padding: 0;
-
-        display: flex;
-        flex-direction: column;
-        gap: 16px;
-    }
-
-    .meals li,
-    .total-wrapper {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        p > span {
-            color: v.$primary;
-        }
-    }
-
-    .total-text,
-    .meal-name {
-        height: 52px;
-
-        font-size: 20px;
-        line-height: 65px;
-
-        display: flex;
-        align-items: center;
-    }
-
-    .total,
-    .meal-price {
-        height: 30px;
-
-        display: flex;
-        align-items: center;
-        text-align: center;
-
-        font-size: 13px;
-        line-height: 20px;
-    }
-
-    @media screen and (max-width: 831px) {
-        & {
-            bottom: 203px;
-        }
+        color: v.$font-dark;
+        font-style: normal;
+        font-weight: 700;
     }
 
     @media screen and (max-width: 540px) {
-        & {
-            bottom: 181px;
-        }
+        width: 352.95px;
+
+        padding-left: 33.85px;
+        padding-right: 33.85px;
     }
 
     @media screen and (max-width: 390px) {
         & {
-            bottom: 298px;
+            width: 80%;
+            height: auto;
+
+            padding-bottom: 30px;
         }
     }
+}
+
+.divider {
+    height: 0px;
+    border: 1px solid rgba(121, 121, 121, 0.4);
+    margin-top: 23.51px;
+    margin-bottom: 19.49px;
+}
+
+.meals {
+    max-height: 350px;
+    overflow: hidden;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.meals li,
+.total-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p > span {
+        color: v.$primary;
+    }
+}
+
+.total-text,
+.meal-name {
+    height: 52px;
+
+    font-size: 20px;
+    line-height: 65px;
+
+    display: flex;
+    align-items: center;
+}
+
+.total,
+.meal-price {
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    font-size: 13px;
+    line-height: 20px;
 }

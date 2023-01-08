@@ -4,7 +4,7 @@ import { useRef } from 'react';
 
 import useDragScrolling, { directions } from '../../hooks/useDragScrolling';
 
-const BasketListing = ({ basket = [] }) => {
+const BasketListing = ({ basket = [], className }) => {
 
     const mealsRef = useRef();
 
@@ -14,7 +14,7 @@ const BasketListing = ({ basket = [] }) => {
 
     return (
         <div
-            className={styles['basket-list-wrapper']}
+            className={`${styles['basket-list-wrapper']} ${className || ''}`}
         >
             <div
                 className={`basket-list ${styles['basket-list']}`}

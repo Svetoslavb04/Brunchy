@@ -2,10 +2,10 @@ import styles from './SuccessfulOrder.module.scss'
 
 import Button from '../Button/Button';
 
-const SuccessfulOrder = ({ onButtonClick }) => {
+const SuccessfulOrder = ({ onButtonClick, className }) => {
     return (
         <div
-            className={styles['successful-order']}
+            className={`${styles['successful-order']} ${className || ''} successful-order`}
         >
             <h1>Congratulations!</h1>
             <h2>Your order it’s on its way.</h2>
