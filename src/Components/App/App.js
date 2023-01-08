@@ -7,7 +7,7 @@ import Headline from '../Headline/Headline';
 import Subheadline from '../Subheadline/Subheadline';
 import MealsList from '../MealsList/MealsList';
 import MealsBasket from '../MealsBasket/MealsBasket';
-import BasketListingModal from '../BasketListingModal/BasketListingModal';
+import BasketListing from '../BasketListing/BasketListing';
 import SuccessfulOrder from '../SuccessfulOrder/SuccessfulOrder';
 import Modal from '../Modal/Modal';
 
@@ -62,10 +62,9 @@ function App() {
       <Subheadline />
       <MealsList handleMealBasketClick={addToBasket} />
       <div id={styles['basket-wrapper']}>
-        <BasketListingModal
-          basket={basket}
-          isVisible={isBasketModalVisible}
-        />
+        <Modal isVisible={isBasketModalVisible}>
+          <BasketListing basket={basket} />
+        </Modal>
         <MealsBasket
           basket={basket}
           openBasketModal={() => setIsBasketModalVisible(true)}

@@ -1,26 +1,7 @@
 @use "src/assets/scss/variables.scss" as v;
 
-#blur-element {
-    width: 100vw;
-    height: 100vh;
-
+.basket-list-wrapper {
     position: fixed;
-    top: 0;
-
-    z-index: 2;
-
-    transition: all 0.5s;
-
-    background: rgba(255, 255, 255, 0.84);
-    backdrop-filter: blur(2px);
-}
-
-#basket-list-wrapper {
-    box-sizing: border-box;
-    position: absolute;
-    z-index: 4;
-
-    transition: all 0.4s;
 
     width: 100%;
 
@@ -29,8 +10,7 @@
     display: flex;
     justify-content: center;
 
-    #basket-list {
-        box-sizing: border-box;
+    .basket-list {
         width: 479.58px;
 
         padding-top: 42px;
@@ -76,7 +56,7 @@
         margin-bottom: 19.49px;
     }
 
-    #meals {
+    .meals {
         max-height: 350px;
         overflow: hidden;
 
@@ -88,8 +68,8 @@
         gap: 16px;
     }
 
-    #meals li,
-    #total-wrapper {
+    .meals li,
+    .total-wrapper {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -99,7 +79,7 @@
         }
     }
 
-    #total-text,
+    .total-text,
     .meal-name {
         height: 52px;
 
@@ -110,7 +90,7 @@
         align-items: center;
     }
 
-    #total,
+    .total,
     .meal-price {
         height: 30px;
 
@@ -139,14 +119,4 @@
             bottom: 298px;
         }
     }
-}
-
-.visible {
-    visibility: visible;
-    opacity: 1;
-}
-
-.hidden {
-    opacity: 0;
-    visibility: hidden;
 }
