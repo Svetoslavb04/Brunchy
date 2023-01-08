@@ -21,7 +21,7 @@ function App() {
   const handleAppClick = (e) => {
 
     const target = e.target;
-    console.log(target);
+    
     if (
       isSuccessModalVisible
       && !target.closest('.successful-order')
