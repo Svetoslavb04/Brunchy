@@ -2,9 +2,9 @@ import styles from './FreeDelivery.module.scss';
 
 const FreeDelivery = () => {
     return (
-        <div id={styles['free-delivery']}>
+        <div className={styles['free-delivery']}>
             <span>Free delivery</span>
-            <div id={styles['circle']}></div>
+            <div className={styles['circle']}></div>
         </div>
     )
 }

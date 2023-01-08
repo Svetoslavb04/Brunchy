@@ -1,0 +1,9 @@
+@use "src/assets/scss/variables.scss" as v;
+
+.meals-list {
+    display: flex;
+    gap: 57px;
+    
+    overflow: hidden;
+}
+
