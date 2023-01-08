@@ -34,7 +34,7 @@ function App() {
       && (
         (
           !target.closest('.meals-basket') && !target.closest('.basket-list'))
-        || target.id === 'order-now-button'
+        || target.classList.contains('order-now-button')
       )
     ) {
 

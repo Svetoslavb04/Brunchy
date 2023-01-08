@@ -1,6 +1,6 @@
 @use "src/assets/scss/variables.scss" as v;
 
-#meals-basket-wrapper {
+.meals-basket-wrapper {
     display: flex;
     justify-content: center;
 
@@ -9,7 +9,7 @@
     z-index: 3;
 }
 
-#meals-basket {
+.meals-basket {
     width: 476px;
     height: 81px;
 
@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: space-between;
 
-    #basket-image-wrapper {
+    .basket-image-wrapper {
         cursor: pointer;
 
         width: 30px;
@@ -37,7 +37,7 @@
         }
     }
 
-    #basket-value {
+    .basket-value {
         margin: 0;
 
         width: 177px;
@@ -69,15 +69,15 @@
         padding-left: 16.02px;
         padding-right: 11.31px;
 
-        #basket-image-wrapper {
+        .basket-image-wrapper {
             width: 28.26px;
         }
 
-        #basket-value {
+        .basket-value {
             width: 166.76px;
         }
 
-        #order-now-button {
+        .order-now-button {
             width: 145.09px;
         }
     }

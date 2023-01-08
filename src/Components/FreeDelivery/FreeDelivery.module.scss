@@ -1,6 +1,6 @@
 @use "src/assets/scss/variables.scss" as v;
 
-#free-delivery {
+.free-delivery {
     width: 179px;
     height: 37px;
     background-color: v.$primary-light;
@@ -17,7 +17,7 @@
         font-weight: 600;
     }
 
-    #circle {
+    .circle {
         width: 55px;
         height: 55px;
         border-radius: 100%;

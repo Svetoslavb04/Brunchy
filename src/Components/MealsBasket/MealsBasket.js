@@ -9,17 +9,17 @@ const MealsBasket = ({ basket = [], openBasketModal, handleOrder }) => {
     const handleBasketClick = () => { openBasketModal() }
 
     return (
-        <div id={styles['meals-basket-wrapper']}>
-            <div id={styles['meals-basket']} className='meals-basket'>
+        <div className={styles['meals-basket-wrapper']}>
+            <div className={`${styles['meals-basket']} meals-basket`}>
                 <div
-                    id={styles['basket-image-wrapper']}
+                    className={styles['basket-image-wrapper']}
                     onClick={handleBasketClick}
                 >
                     <img src="assets/images/shopping-basket.svg" alt="shopping basket" />
                 </div>
-                <p id={styles['basket-value']}>{basketValue.toFixed(2)}$</p>
+                <p className={styles['basket-value']}>{basketValue.toFixed(2)}$</p>
                 <div>
-                    <Button id="order-now-button" onClick={handleOrder} text='Order Now' />
+                    <Button className="order-now-button" onClick={handleOrder} text='Order Now' />
                 </div>
             </div>
         </div>
