@@ -3,6 +3,10 @@
 #meals-basket-wrapper {
     display: flex;
     justify-content: center;
+
+    position: relative;
+    
+    z-index: 3;
 }
 
 #meals-basket {
@@ -18,7 +22,7 @@
     padding-right: 41px;
 
     background-color: v.$surface;
-    border-radius: 16px;
+    border-radius: 15px;
 
     display: flex;
     align-items: center;
@@ -51,26 +55,6 @@
         line-height: 36px;
 
         color: v.$font-dark;
-    }
-
-    #order-now-button {
-        cursor: pointer;
-
-        width: 154px;
-        height: 54px;
-
-        background: v.$primary;
-
-        border: none;
-        border-radius: 15px;
-
-        font-style: normal;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 30px;
-
-        text-align: center;
-        color: #ffffff;
     }
 
     @media screen and (max-width: 831px) {

@@ -1,0 +1,102 @@
+@use "src/assets/scss/variables.scss" as v;
+
+#blur-element {
+    width: 100vw;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+
+    z-index: 4;
+
+    transition: all 0.5s;
+
+    background: rgba(255, 255, 255, 0.84);
+    backdrop-filter: blur(2px);
+}
+
+#success-modal {
+    z-index: 4;
+
+    transition: all 0.5s;
+
+    box-sizing: border-box;
+    text-align: center;
+
+    width: 615px;
+    height: 370px;
+
+    padding-top: 86px;
+    padding-bottom: 85px;
+
+    border-radius: 15px;
+    background-color: v.$surface;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    h1,
+    h2 {
+        height: 52px;
+        line-height: 65px;
+    }
+
+    h1 {
+        margin: 0;
+        margin-bottom: 11px;
+
+        font-weight: 700;
+        font-size: 40px;
+
+        color: v.$primary;
+    }
+
+    h2 {
+        margin: 0;
+        margin-bottom: 30px;
+
+        font-weight: 600;
+        font-size: 20px;
+
+        color: v.$font-light;
+    }
+
+    @media screen and (max-width: 540px) {
+
+        width: 378px;
+        height: 242px;
+
+        padding-top: 56px;
+        padding-bottom: 56px;
+
+        h1,
+        h2 {
+            height: 33.79px;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        h2 {
+            font-size: 20px;
+        }
+
+        .close-modal-button {
+            width: 25%;
+            height: 35px;
+        }
+    }
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
